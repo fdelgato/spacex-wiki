@@ -80,7 +80,7 @@ class Launches extends React.Component {
       .then(res => res.json())
       .then(data => {
         data.forEach(item => {
-          item.launch_success = item.launch_success ? 'true' : 'false';
+          item.launch_success = Boolean(item.launch_success);
         });
         this.setState({ data: data })
       })
